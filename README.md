@@ -1,1 +1,2 @@
 # FROGS
+Freelancer Reservation Organization Guide and Scheduler, henceforth referred to as FROGS, is an intuitive booking system for a service marketplace that connects customers with local providers like repair technicians, makeup artists, and all other sorts of services.
