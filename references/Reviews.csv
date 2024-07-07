@@ -1,0 +1,101 @@
+REVIEW_ID,CUSTOMER_ID,BUSINESS_ID,RATING,COMMENT
+1,101,99,2,Loved it!
+2,102,57,3,Excellent service!
+3,103,89,4,Would definitely recommend.
+4,104,76,2,Excellent service!
+5,105,20,1,Amazing quality!
+6,106,52,1,Could be better.
+7,107,97,4,Excellent service!
+8,108,77,2,Loved it!
+9,109,91,1,Friendly staff and great service.
+10,110,50,3,Will visit again.
+11,111,27,2,Would definitely recommend.
+12,112,22,2,Will visit again.
+13,113,23,4,Excellent service!
+14,114,79,2,Very satisfied with the experience.
+15,115,54,2,Loved it!
+16,116,42,3,Very satisfied with the experience.
+17,117,72,2,Amazing quality!
+18,118,6,4,Could be better.
+19,119,14,4,Loved it!
+20,120,25,5,Could be better.
+21,121,7,5,Will visit again.
+22,122,47,3,Not worth the money.
+23,123,95,4,Will visit again.
+24,124,66,1,Could be better.
+25,125,50,1,Will visit again.
+26,126,61,4,Very satisfied with the experience.
+27,127,48,3,Will visit again.
+28,128,28,4,Loved it!
+29,129,19,5,Very satisfied with the experience.
+30,130,45,5,Not worth the money.
+31,131,70,1,Not what I expected.
+32,132,41,2,Very satisfied with the experience.
+33,133,59,2,Will visit again.
+34,134,13,3,Very satisfied with the experience.
+35,135,72,5,Could be better.
+36,136,56,5,Friendly staff and great service.
+37,137,3,3,Could be better.
+38,138,96,5,Friendly staff and great service.
+39,139,30,3,Not worth the money.
+40,140,93,4,Could be better.
+41,141,58,1,Will visit again.
+42,142,12,3,Amazing quality!
+43,143,93,1,Will visit again.
+44,144,36,2,Friendly staff and great service.
+45,145,12,3,Very satisfied with the experience.
+46,146,27,4,Will visit again.
+47,147,24,3,Very satisfied with the experience.
+48,148,54,4,Would definitely recommend.
+49,149,88,2,Not worth the money.
+50,101,15,1,Loved it!
+51,102,66,1,Loved it!
+52,103,15,3,Would definitely recommend.
+53,104,34,5,Not worth the money.
+54,105,76,5,Very satisfied with the experience.
+55,106,52,1,Amazing quality!
+56,107,80,5,Not worth the money.
+57,108,87,4,Excellent service!
+58,109,83,4,Very satisfied with the experience.
+59,110,1,2,Friendly staff and great service.
+60,111,60,4,Could be better.
+61,112,77,4,Could be better.
+62,113,43,4,Very satisfied with the experience.
+63,114,71,3,Not what I expected.
+64,115,89,1,Amazing quality!
+65,116,83,3,Friendly staff and great service.
+66,117,63,5,Loved it!
+67,118,6,5,Not what I expected.
+68,119,8,2,Excellent service!
+69,120,34,2,Amazing quality!
+70,121,24,4,Very satisfied with the experience.
+71,122,88,2,Not worth the money.
+72,123,53,5,Not worth the money.
+73,124,41,3,Not worth the money.
+74,125,27,3,Amazing quality!
+75,126,17,1,Amazing quality!
+76,127,57,1,Will visit again.
+77,128,71,5,Excellent service!
+78,129,47,5,Could be better.
+79,130,69,2,Very satisfied with the experience.
+80,131,6,3,Friendly staff and great service.
+81,132,26,2,Loved it!
+82,133,53,5,Friendly staff and great service.
+83,134,59,5,Loved it!
+84,135,17,4,Could be better.
+85,136,74,4,Could be better.
+86,137,26,5,Excellent service!
+87,138,82,1,Excellent service!
+88,139,32,2,Excellent service!
+89,140,53,3,Will visit again.
+90,141,1,1,Not worth the money.
+91,142,33,4,Excellent service!
+92,143,15,4,Very satisfied with the experience.
+93,144,26,1,Not worth the money.
+94,145,35,3,Friendly staff and great service.
+95,146,45,3,Loved it!
+96,147,46,1,Very satisfied with the experience.
+97,148,30,5,Loved it!
+98,149,13,3,Friendly staff and great service.
+99,101,97,1,Not worth the money.
+100,102,35,1,Not what I expected.
