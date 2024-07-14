@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "firebase": "^10.12.3",
+    "oracledb": "^6.5.1",
+    "styled-components": "^6.1.11"
+  },
+  "name": "frogs",
+  "version": "1.0.0",
+  "description": "Freelancer Reservation Organization Guide and Scheduler, henceforth referred to as FROGS, is an intuitive booking system for a service marketplace that connects customers with local providers like repair technicians, makeup artists, and all other sorts of services.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
