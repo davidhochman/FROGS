@@ -6,7 +6,7 @@ async function getAllUsers() {
   try {
     connection = await db.connectToDatabase(); // Get a database connection
     const result = await connection.execute(
-      'SELECT * FROM users',  // Your SQL query to fetch all users
+      'SELECT * FROM JGOLDSTEIN3.users',  // Your SQL query to fetch all users
       [],  // Bind parameters (not needed in this case)
       { outFormat: oracledb.OUT_FORMAT_OBJECT } // Return data as JavaScript objects
     );
