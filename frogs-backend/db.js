@@ -1,5 +1,5 @@
 const oracledb = require('oracledb');
-require('dotenv').config(); // Load environment variables from .env
+require('dotenv').config(); 
 
 async function connectToDatabase() {
     try {
@@ -20,7 +20,7 @@ async function connectToDatabase() {
 
     } catch (err) {
         console.error('Error connecting to Oracle DB:', err);
-        throw err; // Re-throw the error to be handled by calling code
+        throw err; 
     }
 }
 

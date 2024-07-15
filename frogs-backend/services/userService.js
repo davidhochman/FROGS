@@ -5,15 +5,14 @@ async function getAllUsers() {
     const users = await userDAO.getAllUsers();
     return users;  
   } catch (err) {
-    // Log the error for debugging on the server-side
+    // Log the error for debugging
     console.error("Error in getAllUsers:", err); 
 
-    // Throw a new error with a more general message for the client
+    // Throw a new error with a more general message
     throw new Error('Failed to fetch users from the database.'); 
   }
 }
 
 module.exports = {
   getAllUsers,
-  // Add other user-related service functions here (e.g., getUserById, createUser, updateUser, deleteUser)
 };
