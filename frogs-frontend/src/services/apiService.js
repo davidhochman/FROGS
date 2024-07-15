@@ -1,11 +1,10 @@
-const API_BASE_URL = 'http://localhost:3000'; // Update with your backend port
+const API_BASE_URL = 'http://localhost:3000'; 
 
 export async function fetchUsers() {
   try {
     const response = await fetch(`${API_BASE_URL}/users`);
 
     if (!response.ok) {
-      // Attempt to get more details from the response
       const errorData = await response.json().catch(() => ({})); 
       const errorMessage = errorData.error || `Server responded with status: ${response.status}`;
       throw new Error(errorMessage); 
