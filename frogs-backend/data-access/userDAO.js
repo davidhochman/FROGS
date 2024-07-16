@@ -10,7 +10,7 @@ async function getAllUsers() {
       'SELECT * FROM jgoldstein3.users',  
       [],  
       { outFormat: oracledb.OUT_FORMAT_OBJECT } 
-      'SELECT * FROM JGOLDSTEIN3.users',  // Your SQL query to fetch all users
+      `SELECT * FROM JGOLDSTEIN3.users`,  // Your SQL query to fetch all users
       [],  // Bind parameters (not needed in this case)
       { outFormat: oracledb.OUT_FORMAT_OBJECT } // Return data as JavaScript objects
     );
