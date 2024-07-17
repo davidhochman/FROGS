@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const db = require('./db');
 const cors = require('cors');
+const session = require('express-session');
+
 
 const indexRouter = require('./routes/index');
 const userRoutes = require('./routes/userRoutes');
@@ -22,10 +24,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'your_session_secret', 
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true, 
+  },
+}));
 
 
 app.use('/auth', authRoutes); 
-
 app.use('/', indexRouter);
 app.use('/users', userRoutes);
 
