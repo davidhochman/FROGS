@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import authService from '../services/auth';
 import './Register.css';
+import { Link } from 'react-router-dom';
 
 function Register() {
 
@@ -55,6 +56,15 @@ function Register() {
   };
 
   return (
+    <div className="register-container"> {}
+      <div className="login-section"> {}
+        <Link to="/login">
+          <button className="login-button">Login</button>
+        </Link>
+        <p className="login-message">
+          If you have an account, please log in. If not, please register for an account below.
+        </p>
+      </div>
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -100,7 +110,7 @@ function Register() {
         required
       />
 
-      <div className="form-group"> {/* Add a div to group the label and select */}
+      <div className="form-group"> {}
         <label htmlFor="userType">User Type:</label>
         <select
           id="userType"
@@ -121,6 +131,7 @@ function Register() {
       {registrationError && <p className="error-message">{registrationError}</p>}
       {registrationSuccess && <p className="success-message">{registrationSuccess}</p>}
     </form>
+    </div>
   );
 }
 

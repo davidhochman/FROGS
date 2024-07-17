@@ -5,7 +5,7 @@ const { createUser } = require('../data-access/userDAO');
 
 console.log('Auth module loaded'); 
 
-// Registration route
+
 router.post('/register', async (req, res) => {
     try {
         console.log('Register route reached');
@@ -18,4 +18,23 @@ router.post('/register', async (req, res) => {
     }
 });
 
+router.post('/login', async (req, res, next) => {
+    try {
+        console.log('Login route reached');
+        const { username, password } = req.body;
+        const result = await authService.loginUser(username, password);
+
+        if (result) { 
+            console.log('VALID')
+            res.json(result);
+        }
+        else{
+            console.log('INVALID')
+            res.status(401).json({ error: 'Invalid credentials' }); 
+        }
+        
+    } catch (err) {
+        next(err); 
+    }
+});
 module.exports = router;

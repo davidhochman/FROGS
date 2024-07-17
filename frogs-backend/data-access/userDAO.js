@@ -10,7 +10,7 @@ async function getAllUsers() {
       'SELECT * FROM jgoldstein3.users',  
       [],  
       { outFormat: oracledb.OUT_FORMAT_OBJECT } 
-      'SELECT * FROM JGOLDSTEIN3.users',  // Your SQL query to fetch all users
+      `SELECT * FROM JGOLDSTEIN3.users`,  // Your SQL query to fetch all users
       [],  // Bind parameters (not needed in this case)
       { outFormat: oracledb.OUT_FORMAT_OBJECT } // Return data as JavaScript objects
     );
@@ -90,13 +90,27 @@ async function createUser(userData) {
 
 
 async function getUserByUsername(username) {
-  // Fetch user from database 
-  const result = await db.query(
-      'SELECT * FROM jgoldstein3.users WHERE username = $1',
-      [username]
-  );
-
-  return result.rows[0]; // Return the user if found, otherwise null
+  let connection;
+  try {
+      connection = await db.connectToDatabase();
+      const result = await connection.execute(
+          `SELECT * FROM JGOLDSTEIN3.users WHERE username = :1`,  
+          [username],
+          { outFormat: oracledb.OUT_FORMAT_OBJECT }
+      );
+      return result.rows[0];  
+  } catch (err) {
+      console.error('Error fetching user:', err);
+      return null;
+  } finally {
+      if (connection) {
+          try {
+              await connection.close(); 
+          } catch (err) {
+              console.error('Error closing connection:', err);
+          }
+      }
+  }
 }
 
 module.exports = {
