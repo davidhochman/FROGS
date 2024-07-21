@@ -37,3 +37,7 @@ FROM JGOLDSTEIN3.BusinessData biz;
 SELECT *
 FROM JGOLDSTEIN3.BusinessData biz
 WHERE biz.BusID = 80;
+
+INSERT INTO JGOLDSTEIN3.Users VALUES (175, 'athenaBIZ', 'athena', 'Business', 'athenaBiz@example.com', 'Biz McBiz', ' +1-352-385-7155');
+
+
