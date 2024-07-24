@@ -121,7 +121,6 @@ function Register() {
         >
           <option value="">Select User Type</option>
           <option value="Customer">Customer</option>
-          <option value="Business">Business</option>
         </select>
       </div>
 

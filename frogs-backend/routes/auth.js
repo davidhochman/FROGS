@@ -2,18 +2,28 @@ const express = require('express');
 const router = express.Router();
 const authService = require('../services/auth');
 const { createUser } = require('../data-access/userDAO'); 
+const { createBusiness } = require('../data-access/businessDAQ');
 
 console.log('Auth module loaded'); 
 
 
 router.post('/register', async (req, res) => {
     try {
-        console.log('Register route reached');
         const userData = req.body;
         const newUser = await createUser(userData);
         res.status(201).json(newUser);
     } catch (err) {
-        console.error('Error in registration:', err); 
+        res.status(500).json({ error: err.message }); 
+    }
+});
+
+router.post('/regbusiness', async (req, res) => {
+    try {
+        console.log('Regbusiness Reached');
+        const userID = req.body;
+        const newBusiness = await createBusiness(userID);
+    } catch (err) {
+        console.error('Error in businessregistration:', err); 
         res.status(500).json({ error: err.message }); 
     }
 });

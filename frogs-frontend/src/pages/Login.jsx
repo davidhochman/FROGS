@@ -1,6 +1,7 @@
-import React, { useState } from 'react'; // Use useState
+import React, { useState, useContext } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import authService from '../services/auth';
+import UserContext from '../context/UserContext';
 import './Register.css';
 
 function Login() {
@@ -17,6 +18,9 @@ function Login() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const { setUser } = useContext(UserContext);
+  const { setBusiness } = useContext(UserContext);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
@@ -31,14 +35,18 @@ function Login() {
         console.log('Login successful!');
         setSuccessMessage('Login successful!');
         localStorage.setItem('token', user.token);
+        setUser(user.user);
 
         if (user.user.USERTYPE === 'Business') {
           console.log('Navigating to provider dashboard')
+          setBusiness(user.business)
           navigate('/ProviderDash');
 
         } else if (user.user.USERTYPE === 'Customer') {
           console.log('Navigating to customer dashboard')
           navigate('/CustomerDash');
+        } else if (user.user.USERTYPE === 'Admin') {
+          navigate('/AdminDash');
         }
 
       } else {

@@ -22,6 +22,31 @@ async function register(userData) {
   }
 }
 
+async function registerbusiness(userID) {
+  try {
+    console.log(userID);
+    const response = await fetch(`${API_BASE_URL}/auth/regbusiness`, { 
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userID: userID }), // Send as an object
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Business Registration failed'); 
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error('Business Registration failed'); 
+  }
+}
+
+
+
 async function login(username, password) {
   try {
     const response = await fetch(`${API_BASE_URL}/auth/login`, {
@@ -44,4 +69,4 @@ async function login(username, password) {
   }
 }
 
-export default {register,login};
+export default {register,registerbusiness,login};
