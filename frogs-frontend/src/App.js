@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import { UserProvider } from './context/UserContext'; // Import the UserProvider
+import { UserProvider } from './context/UserContext'; 
 import Register from './pages/Register';
 import Login from './pages/Login';
 import CustomerDashboard from './pages/CustomerDashboard';
 import ProviderDashboard from './pages/ProviderDashboard';
 import AdminDashboard from './pages/AdminDashboard';
-import EditProfile from './pages/ProviderDashboard/EditProfile';
-import CreateBookings from './pages/ProviderDashboard/CreateBookings';
-import ManageBookings from './pages/ProviderDashboard/ManageBookings';
 import Reviews from './pages/ProviderDashboard/Reviews';
 
 
@@ -30,14 +27,8 @@ function App() {
                             <Route path="/" element={<Register />} />
                             <Route path="/login" element={<Login />} />
                             <Route path="/CustomerDash" element={<CustomerDashboard />} />
-
-                            <Route path="/ProviderDash" element={<ProviderDashboard />} >
-                                <Route path="edit-profile" element={<EditProfile />} />
-                                <Route path="create-bookings" element={<CreateBookings />} />
-                                <Route path="manage-bookings" element={<ManageBookings />} />
-                                <Route path="reviews" element={<Reviews />} />
-                                /</Route>
-
+                            <Route path="/ProviderDash" element={<ProviderDashboard />} />
+                            <Route path="/ProviderDash/Reviews" element={<Reviews />} />
                             <Route path="/AdminDash" element={<AdminDashboard />} />
                         </Routes>
                     </main>
