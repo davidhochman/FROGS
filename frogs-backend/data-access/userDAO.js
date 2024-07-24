@@ -1,5 +1,5 @@
-const db = require('../db'); // Import database connection module
-const oracledb = require('oracledb'); // Import the OracleDB driver
+const db = require('../db'); 
+const oracledb = require('oracledb'); 
 const bcrypt = require('bcrypt');
 
 async function getAllUsers() {
@@ -10,9 +10,9 @@ async function getAllUsers() {
       'SELECT * FROM jgoldstein3.users',  
       [],  
       { outFormat: oracledb.OUT_FORMAT_OBJECT } 
-      `SELECT * FROM JGOLDSTEIN3.users`,  // Your SQL query to fetch all users
-      [],  // Bind parameters (not needed in this case)
-      { outFormat: oracledb.OUT_FORMAT_OBJECT } // Return data as JavaScript objects
+      `SELECT * FROM JGOLDSTEIN3.users`,  
+      [],  
+      { outFormat: oracledb.OUT_FORMAT_OBJECT } 
     );
     return result.rows;  
   } catch (err) {

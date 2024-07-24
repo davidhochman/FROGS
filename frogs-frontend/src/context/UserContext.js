@@ -13,7 +13,6 @@ export const UserProvider = ({ children }) => {
     const [business, setBusiness] = useState(null);
 
     useEffect(() => {
-        // Load user and business from local storage on mount
         const storedUser = localStorage.getItem('user');
         const storedBusiness = localStorage.getItem('business');
         if (storedUser) {
@@ -24,7 +23,6 @@ export const UserProvider = ({ children }) => {
         }
     }, []);
 
-    // Save user and business to local storage when they change
     useEffect(() => {
         if (user) {
             localStorage.setItem('user', JSON.stringify(user));
