@@ -2,13 +2,19 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { getUserByUsername } = require('../data-access/userDAO');
+const { getBusinessByUsername } = require('../data-access/businessDAQ');
+
+
 
 async function loginUser(username, password) {
     console.log('Login attempt with username:', username); 
 
     try {
         const user = await getUserByUsername(username);
-        console.log('Users fetched from database:', user); 
+        console.log('Users fetched from database:', user);
+
+        const business = await getBusinessByUsername(username);
+        console.log(business);
 
         if (user == undefined) {
             console.warn('User not found in database');
@@ -31,7 +37,7 @@ async function loginUser(username, password) {
         const token = jwt.sign({ userId: user.userid }, 'your_secret_key');
         console.log('User successfully logged in, Token generated:', token); 
 
-        return { user, token }; 
+        return { user, token,business }; 
     } catch (err) {
         console.error('Error during login:', err);
         return null;
