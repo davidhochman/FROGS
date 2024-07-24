@@ -7,11 +7,30 @@ function Reviews() {
 
   console.log("Reviews component rendered"); 
 
+
+
   if (user) {
     return (
       <div>
         <h2>Reviews for {business.name}</h2> {/* Example: Displaying the business name from the context */}
-        {/* ... your code to display reviews ... */}
+        {/* Table */}
+        <table>
+          <tr>
+            <th>Rating</th>
+            <th>Comment</th>
+            <th>Reply</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>I don't like this</td>
+            <td>Too bad!</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>This is fine</td>
+            <td>Okay loser</td>
+          </tr>
+        </table>
       </div>
     );
   }
