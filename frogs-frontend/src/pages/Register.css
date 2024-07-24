@@ -2,7 +2,6 @@
 .register-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #ffffff; 
@@ -97,5 +96,26 @@
     right: 15px;
     transform: translateY(-50%); 
     pointer-events: none; 
+  }
+
+  .login-section {
+    text-align: center; 
+    margin-top: 20px;   
+  }
+  
+  .login-button {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333; 
   }
   
