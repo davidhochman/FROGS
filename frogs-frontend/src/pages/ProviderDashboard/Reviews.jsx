@@ -1,12 +1,20 @@
 import React, { useContext } from 'react';
 import UserContext from '../../context/UserContext';
 
+
+//data for table
+const data = [
+  { rating: 1, comment: "Terrible service!", reply: "Too bad loser." },
+  { rating: 5, comment: "Best thing ever!", reply: "You're welcome." },
+  { rating: 3, comment: "Okay I guess.", reply: "Try harder." },
+]
+
+
 function Reviews() {
   const { user } = useContext(UserContext); 
   const { business } = useContext(UserContext); 
 
   console.log("Reviews component rendered"); 
-
 
 
   if (user) {
@@ -20,16 +28,15 @@ function Reviews() {
             <th>Comment</th>
             <th>Reply</th>
           </tr>
-          <tr>
-            <td>1</td>
-            <td>I don't like this</td>
-            <td>Too bad!</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>This is fine</td>
-            <td>Okay loser</td>
-          </tr>
+          {data.map((val, key) => {
+                    return (
+                        <tr key={key}>
+                            <td>{val.rating}</td>
+                            <td>{val.comment}</td>
+                            <td>{val.reply}</td>
+                        </tr>
+                    )
+                })}
         </table>
       </div>
     );
