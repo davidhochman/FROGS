@@ -15,7 +15,7 @@ function ProviderDashboard() {
           <li><NavLink to="/provider-dashboard/edit-profile">Edit Profile</NavLink></li>
           <li><NavLink to="/provider-dashboard/create-bookings">Create Bookings</NavLink></li>
           <li><NavLink to="/provider-dashboard/manage-bookings">Manage Bookings</NavLink></li>
-          <li><NavLink to="/provider-dashboard/reviews">Reviews</NavLink></li>
+          <li><NavLink to="/ProviderDash/Reviews">Reviews</NavLink></li>
         </ul>
       </nav>
     </div>
