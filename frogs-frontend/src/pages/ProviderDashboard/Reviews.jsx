@@ -9,12 +9,13 @@ const data = [
   { rating: 3, comment: "Okay I guess.", reply: "Try harder." },
 ]
 
-//size of table collums
+//table style
 const styles = {
-  table: { width: '100%', tableLayout: 'fixed' },
-  ratingColumn: { width: '10%' },
-  commentColumn: { width: '45%' },
-  replyColumn: { width: '45%' },
+  table: { width: '100%', tableLayout: 'fixed', border: '1px solid black'},
+  ratingColumn: { width: '10%', border: '1px solid black' },
+  commentColumn: { width: '45%', border: '1px solid black' },
+  replyColumn: { width: '45%', border: '1px solid black' },
+  updateColumn: { width: '10%', border: '1px solid black' },
 };
 
 function Reviews() {
@@ -35,6 +36,7 @@ function Reviews() {
             <th style={styles.ratingColumn}>Rating</th>
             <th style={styles.commentColumn}>Comment</th>
             <th style={styles.replyColumn}>Reply</th>
+            <th style={styles.updateColumn}>Update</th>
           </tr>
           {data.map((val, key) => {
                     return (
@@ -42,6 +44,7 @@ function Reviews() {
                             <td style={styles.ratingColumn}>{val.rating}</td>
                             <td style={styles.commentColumn}>{val.comment}</td>
                             <td style={styles.replyColumn}>{val.reply}</td>
+                            <td style={styles.updateColumn}></td>
                         </tr>
                     )
                 })}
