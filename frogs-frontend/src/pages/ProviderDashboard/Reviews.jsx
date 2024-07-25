@@ -64,12 +64,12 @@ function Reviews() {
                               <textarea
                                 //value={replies[key]}
                                 //onChange={(event) => handleReplyChange(key, event)}
-                                style={{ width: '100%' }}
+                                style={{ width: '90%', height: '70px', resize: 'none' }}
                               />
                             </td>
                             {/* The button to edit */}
                             <td style={styles.updateColumn}>
-                              <button onClick={() => handleReplySubmit(key)}>Submit</button>
+                              <button onClick={() => handleReplySubmit(key)}>Submit Update</button>
                             </td>
                         </tr>
                     )
