@@ -1,0 +1,27 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.reviews h1 {
+  margin-bottom: 1rem;
+}
+
+.review {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.review h2 {
+  margin-bottom: 0.5rem;
+}
+
+.review p {
+  margin-bottom: 0.5rem;
+}
