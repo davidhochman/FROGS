@@ -13,16 +13,32 @@ const data = [
 const styles = {
   table: { width: '100%', tableLayout: 'fixed', border: '1px solid black'},
   ratingColumn: { width: '10%', border: '1px solid black' },
-  commentColumn: { width: '45%', border: '1px solid black' },
-  replyColumn: { width: '45%', border: '1px solid black' },
+  commentColumn: { width: '40%', border: '1px solid black' },
+  replyColumn: { width: '40%', border: '1px solid black' },
   updateColumn: { width: '10%', border: '1px solid black' },
 };
 
 function Reviews() {
   const { user } = useContext(UserContext); 
-  const { business } = useContext(UserContext); 
+  const { business } = useContext(UserContext);
 
-  console.log("Reviews component rendered"); 
+
+  /*
+  const [replies, setReplies] = useState(data.map((item) => item.reply));
+
+  const handleReplyChange = (index, event) => {
+    const newReplies = [...replies];
+    newReplies[index] = event.target.value;
+    setReplies(newReplies);
+  };
+  */
+
+  console.log("Reviews component rendered");
+
+  const handleReplySubmit = (index) => {
+    //console.log(`Reply for item ${index} submitted: ${replies[index]}`);
+    // Here, you can add your submission logic, e.g., API call to update the reply in the backend.
+  };
 
 
   if (user) {
@@ -43,8 +59,18 @@ function Reviews() {
                         <tr key={key}>
                             <td style={styles.ratingColumn}>{val.rating}</td>
                             <td style={styles.commentColumn}>{val.comment}</td>
-                            <td style={styles.replyColumn}>{val.reply}</td>
-                            <td style={styles.updateColumn}></td>
+                            {/* The form */}
+                            <td style={styles.replyColumn}>{val.reply}
+                              <textarea
+                                //value={replies[key]}
+                                //onChange={(event) => handleReplyChange(key, event)}
+                                style={{ width: '100%' }}
+                              />
+                            </td>
+                            {/* The button to edit */}
+                            <td style={styles.updateColumn}>
+                              <button onClick={() => handleReplySubmit(key)}>Submit</button>
+                            </td>
                         </tr>
                     )
                 })}
