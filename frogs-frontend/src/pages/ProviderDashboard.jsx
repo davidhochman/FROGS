@@ -12,9 +12,9 @@ function ProviderDashboard() {
       <h1>Provider Dashboard : {user.USERNAME} </h1> 
       <nav className="navbar">
         <ul>
-          <li><NavLink to="/provider-dashboard/edit-profile">Edit Profile</NavLink></li>
-          <li><NavLink to="/provider-dashboard/create-bookings">Create Bookings</NavLink></li>
-          <li><NavLink to="/provider-dashboard/manage-bookings">Manage Bookings</NavLink></li>
+          <li><NavLink to="/ProviderDash/EditProfile">Edit Profile</NavLink></li>
+          <li><NavLink to="/ProviderDash/CreateBookings">Create Bookings</NavLink></li>
+          <li><NavLink to="/ProviderDash/ManageBookings">Manage Bookings</NavLink></li>
           <li><NavLink to="/ProviderDash/Reviews">Reviews</NavLink></li>
         </ul>
       </nav>

@@ -8,6 +8,9 @@ import CustomerDashboard from './pages/CustomerDashboard';
 import ProviderDashboard from './pages/ProviderDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import Reviews from './pages/ProviderDashboard/Reviews';
+import ManageBookings from './pages/ProviderDashboard/ManageBookings';
+import CreateBookings from './pages/ProviderDashboard/CreateBookings';
+import EditProfile from './pages/ProviderDashboard/EditProfile';
 
 
 function App() {
@@ -29,6 +32,9 @@ function App() {
                             <Route path="/CustomerDash" element={<CustomerDashboard />} />
                             <Route path="/ProviderDash" element={<ProviderDashboard />} />
                             <Route path="/ProviderDash/Reviews" element={<Reviews />} />
+                            <Route path="/ProviderDash/CreateBookings" element={<CreateBookings />} />
+                            <Route path="/ProviderDash/ManageBookings" element={<ManageBookings />} />
+                            <Route path="/ProviderDash/EditProfile" element={<EditProfile />} />
                             <Route path="/AdminDash" element={<AdminDashboard />} />
                         </Routes>
                     </main>
