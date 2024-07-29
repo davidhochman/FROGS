@@ -62,6 +62,11 @@ function Reviews() {
           />
         </form>
 
+        {/* Decorative Line */}
+        <div>
+          <hr style={{ border: '1px solid #000', margin: '20px 0' }} />
+        </div>
+
         {/* Table */}
         <table style={styles.table}>
           <tr>

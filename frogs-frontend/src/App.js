@@ -9,6 +9,7 @@ import ProviderDashboard from './pages/ProviderDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import Reviews from './pages/ProviderDashboard/Reviews';
 import CustomerReviews from './pages/CustomerDashboard/Reviews';
+import Search from './pages/CustomerDashboard/Search';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
                             <Route path="/ProviderDash/Reviews" element={<Reviews />} />
                             <Route path="/AdminDash" element={<AdminDashboard />} />
                             <Route path="/CustomerDash/Reviews" element={<CustomerReviews />} />
+                            <Route path="/CustomerDash/Search" element={<Search />} />
                         </Routes>
                     </main>
                 </div>

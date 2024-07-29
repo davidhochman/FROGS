@@ -17,6 +17,7 @@ function CustomerDashboard() {
         <nav className="navbar">
           <ul>
             <li><NavLink to="/CustomerDash/Reviews">Reviews</NavLink></li>
+            <li><NavLink to="/CustomerDash/Search">Search</NavLink></li>
           </ul>
         </nav>
       </div>
