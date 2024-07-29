@@ -9,16 +9,36 @@ const data = [
   { name: "Horses Galore", descrption: "Buy a Horse", loc: "9000 Barn St." },
 ]
 
-//table style
+//all styles
 const styles = {
   table: { width: '100%', tableLayout: 'fixed', border: '1px solid black'},
   nameColumn: { width: '20%', border: '1px solid black' },
   descrptionColumn: { width: '40%', border: '1px solid black' },
   locColumn: { width: '30%', border: '1px solid black' },
+  filterRow: { marginBottom: '20px' },
+  button: { marginRight: '10px' },
+  select: { marginRight: '10px' }
 };
 
-function Reviews() {
+function Search() {
   const { user } = useContext(UserContext);
+  const [filter, setFilter] = useState("All");
+
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value);
+  };
+
+  const handleFilterSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  //this needs to be changed to work with the BusinessMetrics Table
+  const filteredData = filter === "All" ? data : data.filter((item) => {
+    if (filter === "1 Booking") return item.bookings >= 1;
+    if (filter === "25 Bookings") return item.bookings >= 25;
+    if (filter === "100 Bookings") return item.bookings >= 100;
+    return true;
+  });
 
   /**/
 
@@ -29,6 +49,18 @@ function Reviews() {
     return (
       <div>
         <h2>Find a Buisness</h2>
+
+        {/* Filters */}
+        {/* this needs to be changed to work with the BusinessMetrics Table*/}
+        <form onSubmit={handleFilterSubmit} style={styles.filterRow}>
+          <select style={styles.select} value={filter} onChange={handleFilterChange}>
+            <option value="All">Minimum Booking History</option>
+            <option value="1 Booking">1 Booking</option>
+            <option value="25 Bookings">25 Bookings</option>
+            <option value="100 Bookings">100 Bookings</option>
+          </select>
+          <button type="submit" style={styles.button}>Filter</button>
+        </form>
 
         {/* Decorative Line */}
         <div>
@@ -63,4 +95,4 @@ function Reviews() {
   )
 }
 
-export default Reviews;
+export default Search;
