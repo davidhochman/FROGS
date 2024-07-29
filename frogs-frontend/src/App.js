@@ -8,6 +8,7 @@ import CustomerDashboard from './pages/CustomerDashboard';
 import ProviderDashboard from './pages/ProviderDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import Reviews from './pages/ProviderDashboard/Reviews';
+import CustomerReviews from './pages/CustomerDashboard/Reviews';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                             <Route path="/ProviderDash" element={<ProviderDashboard />} />
                             <Route path="/ProviderDash/Reviews" element={<Reviews />} />
                             <Route path="/AdminDash" element={<AdminDashboard />} />
+                            <Route path="/CustomerDash/Reviews" element={<CustomerReviews />} />
                         </Routes>
                     </main>
                 </div>

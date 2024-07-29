@@ -19,7 +19,8 @@ const styles = {
 };
 
 function Reviews() {
-  const { user } = useContext(UserContext); 
+  const { user } = useContext(UserContext);
+  const { business } = useContext(UserContext); 
 
 
   /*
@@ -43,7 +44,7 @@ function Reviews() {
   if (user) {
     return (
       <div>
-        <h2>Reviews for {user.name}</h2> {/* Example: Displaying the name from the context */}
+        <h2>Reviews for {business.name}</h2> {/* Example: Displaying the name from the context */}
         
         {/* Table */}
         <table style={styles.table}>
@@ -51,25 +52,13 @@ function Reviews() {
             <th style={styles.ratingColumn}>Rating</th>
             <th style={styles.commentColumn}>Comment</th>
             <th style={styles.replyColumn}>Reply</th>
-            <th style={styles.updateColumn}>Update</th>
           </tr>
           {data.map((val, key) => {
                     return (
                         <tr key={key}>
                             <td style={styles.ratingColumn}>{val.rating}</td>
                             <td style={styles.commentColumn}>{val.comment}</td>
-                            {/* The form */}
-                            <td style={styles.replyColumn}>{val.reply}
-                              <textarea
-                                //value={replies[key]}
-                                //onChange={(event) => handleReplyChange(key, event)}
-                                style={{ width: '90%', height: '70px', resize: 'none' }}
-                              />
-                            </td>
-                            {/* The button to edit */}
-                            <td style={styles.updateColumn}>
-                              <button onClick={() => handleReplySubmit(key)}>Submit Update</button>
-                            </td>
+                            <td style={styles.replyColumn}>{val.reply}</td>
                         </tr>
                     )
                 })}
