@@ -15,17 +15,10 @@ function ProviderDashboard() {
       <h1>Provider Dashboard : {user.USERNAME} </h1>
       <nav className="navbar">
         <ul>
-<<<<<<< HEAD
           <li><NavLink to="/provider-dashboard/edit-profile">Edit Profile</NavLink></li>
           <li><NavLink to="/provider-dashboard/create-bookings">Create Bookings</NavLink></li>
           <li><NavLink to="/provider-dashboard/manage-bookings">Manage Bookings</NavLink></li>
           <li><NavLink to="/ProviderDash/Reviews">Reviews</NavLink></li>
-=======
-          <li><NavLink to="/provider-dashboard/edit-profile" activeClassName="active">Edit Profile</NavLink></li>
-          <li><NavLink to="/provider-dashboard/create-bookings" activeClassName="active">Create Bookings</NavLink></li>
-          <li><NavLink to="/provider-dashboard/manage-bookings" activeClassName="active">Manage Bookings</NavLink></li>
-          <li><NavLink to="/provider-dashboard/reviews" activeClassName="active">Reviews</NavLink></li>
->>>>>>> SamBranch
         </ul>
       </nav>
     </div>
