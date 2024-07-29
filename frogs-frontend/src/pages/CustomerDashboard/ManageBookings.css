@@ -1,0 +1,27 @@
+.manage-bookings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.manage-bookings h1 {
+  margin-bottom: 1rem;
+}
+
+.booking {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.booking h2 {
+  margin-bottom: 0.5rem;
+}
+
+.booking p {
+  margin-bottom: 0.5rem;
+}
