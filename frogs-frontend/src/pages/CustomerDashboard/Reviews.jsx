@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState  } from 'react';
 import UserContext from '../../context/UserContext';
 
 
@@ -20,7 +20,14 @@ const styles = {
 
 function Reviews() {
   const { user } = useContext(UserContext);
-  const { business } = useContext(UserContext); 
+  const [businessName, setBusinessName] = useState("");
+  const [businessReviews, setBusinessReviews] = useState([]);
+
+  
+  const handleBusinessNameChange = (event) => {
+    setBusinessName(event.target.value);
+  };
+  /**/
 
 
   /*
@@ -44,14 +51,23 @@ function Reviews() {
   if (user) {
     return (
       <div>
-        <h2>Reviews for {business.name}</h2> {/* Example: Displaying the name from the context */}
-        
+        <h2>Read Reviews for {businessName}</h2>
+        {/* Pick the biz */}
+        <form style={styles.input}>
+          <input
+            type="text"
+            value={businessName}
+            onChange={handleBusinessNameChange}
+            placeholder="Enter business name"
+          />
+        </form>
+
         {/* Table */}
         <table style={styles.table}>
           <tr>
             <th style={styles.ratingColumn}>Rating</th>
-            <th style={styles.commentColumn}>Comment</th>
-            <th style={styles.replyColumn}>Reply</th>
+            <th style={styles.commentColumn}>Customer Comment</th>
+            <th style={styles.replyColumn}>Business Reply</th>
           </tr>
           {data.map((val, key) => {
                     return (
