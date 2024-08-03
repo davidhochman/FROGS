@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Register() {
 
+  //Form data for admin/business registration
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -14,6 +15,7 @@ function Register() {
     phoneNumber: '',
   });
 
+  //error checking
   const [errors, setErrors] = useState({
     username: null,
     password: null,
@@ -45,7 +47,7 @@ function Register() {
 
       if (response.success) {
         console.log(response.userID);
-        authService.registerbusiness(response.userID);
+        authService.registerbusiness(response.userID); //For a new business acc call register business to instantiate all database tables
         setRegistrationSuccess(response.message);
 
       } else {
@@ -59,11 +61,13 @@ function Register() {
 
   return (
     <div className="register-container"> { }
-      <div className="title-container"> {/* Added container for title and message */}
+      <div className="title-container"> 
         <h1 className="page-title">Administration Page</h1>
         <p className="admin-message">Create a new admin or business account:</p>
       </div>
 
+      {/* Allow navigation back to login after new admin/bus acc is created */}
+      
       <div className="login-section"> { }
         <Link to="/">
           <button className="login-button">Return to Homepage</button>
@@ -72,6 +76,9 @@ function Register() {
           This is the admin page, create a new admin or business account below.
         </p>
       </div>
+
+      {/* Registration input forms */}
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"

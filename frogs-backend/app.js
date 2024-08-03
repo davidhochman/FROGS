@@ -8,6 +8,7 @@ const cors = require('cors');
 const session = require('express-session');
 
 
+//Establish the routes to connect frontend and backend functions
 const indexRouter = require('./routes/index');
 const userRoutes = require('./routes/userRoutes');
 const authRoutes = require('./routes/auth'); 

@@ -1,5 +1,6 @@
 const userDAO = require('../data-access/userDAO');
 
+//Test function, not relevent to the project
 async function getAllUsers() {
   try {
     const users = await userDAO.getAllUsers();

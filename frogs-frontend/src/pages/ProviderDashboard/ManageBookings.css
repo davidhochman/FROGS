@@ -1,27 +1,52 @@
-.manage-bookings {
+.create-bookings {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
 }
 
-.manage-bookings h1 {
+.create-bookings h1 {
   margin-bottom: 1rem;
 }
 
-.booking {
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
+.create-bookings form {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 400px;
 }
 
-.booking h2 {
+.create-bookings label {
   margin-bottom: 0.5rem;
 }
 
-.booking p {
-  margin-bottom: 0.5rem;
+.create-bookings input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.create-bookings button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--color-primary);
+  color: white;
+  cursor: pointer;
+}
+
+.create-bookings button:hover {
+  background-color: #45a049;
+}
+
+.delete-button {
+  background-color: #ff0000; 
+  color: white;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 17px;
+  transition: background-color 0.3s ease; 
 }

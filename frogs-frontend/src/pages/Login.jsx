@@ -5,6 +5,8 @@ import UserContext from '../context/UserContext';
 import './Register.css';
 
 function Login() {
+
+  //updates the current username and password for function usage
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -14,10 +16,12 @@ function Login() {
   const [successMessage, setSuccessMessage] = useState(null);
   const navigate = useNavigate();
 
+  //sets the username and password 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  //functions to set the user and business objects from UserContext for usage in dashboard interface
   const { setUser } = useContext(UserContext);
   const { setBusiness } = useContext(UserContext);
 
@@ -27,10 +31,14 @@ function Login() {
     setSuccessMessage(null);
 
     try {
+
+      {/* Function call for login authentication */}
       const user = await authService.login(formData.username, formData.password);
       console.log(user.user.USERTYPE);
 
       if (user) {
+
+        {/* Successful login, set the user context */}
 
         console.log('Login successful!');
         setSuccessMessage('Login successful!');
@@ -38,14 +46,23 @@ function Login() {
         setUser(user.user);
 
         if (user.user.USERTYPE === 'Business') {
+
+          {/* If the user is a business owner set the business context */}
+          {/* Navigate to business dashboard */}
           console.log('Navigating to provider dashboard')
           setBusiness(user.business)
           navigate('/ProviderDash');
 
         } else if (user.user.USERTYPE === 'Customer') {
+
+          {/* Navigate to customer dashboard */}
+
           console.log('Navigating to customer dashboard')
           navigate('/CustomerDash');
         } else if (user.user.USERTYPE === 'Admin') {
+
+          {/* Navigate to admin dashboard */}
+
           navigate('/AdminDash');
         }
 
@@ -60,6 +77,7 @@ function Login() {
     }
   };
 
+  {/* Login input fields */}
   return (
     <form onSubmit={handleSubmit}>
       <input

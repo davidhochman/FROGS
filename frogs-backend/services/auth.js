@@ -6,6 +6,7 @@ const { getBusinessByUsername } = require('../data-access/businessDAQ');
 
 
 
+//Login function, authenticates username and password for login
 async function loginUser(username, password) {
     console.log('Login attempt with username:', username); 
 

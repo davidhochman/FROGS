@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Register() {
 
+  //Form data for the registration, this data will be sent to the function call
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -14,6 +15,7 @@ function Register() {
     phoneNumber: '',
   });
 
+  //Sets specific errors for incorrect input 
   const [errors, setErrors] = useState({
     username: null,
     password: null,
@@ -31,6 +33,7 @@ function Register() {
     setFormData({ ...formData, [name]: value });
   };
 
+  //When the user presses the register button... calls the register function and handles the response.
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -56,6 +59,7 @@ function Register() {
   };
 
   return (
+
     <div className="register-container"> {}
       <div className="login-section"> {}
         <Link to="/login">
@@ -65,6 +69,9 @@ function Register() {
           If you have an account, please log in. If not, please register for an account below.
         </p>
       </div>
+
+
+    {/* Register form*/}
     <form onSubmit={handleSubmit}>
       <input
         type="text"

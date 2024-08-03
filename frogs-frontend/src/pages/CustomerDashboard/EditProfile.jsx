@@ -7,20 +7,15 @@ import { useNavigate } from 'react-router-dom';
 function EditProfile() {
 
   const {user} = useContext(UserContext);
-  const {business} = useContext(UserContext);
   const { setUser } = useContext(UserContext);
-  const { setBusiness } = useContext(UserContext);
   const navigate = useNavigate();
 
-  //Form data for profile update values
+  //Form data for the profile update
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     fullName: '',
     phoneNumber: '',
-    businessName: '',
-    address: '',
-    profileDescription: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -32,6 +27,7 @@ function EditProfile() {
     setErrors({ ...errors, [name]: null });
   };
 
+  //Send the form data to the backend to update the existing user profile
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors({});
@@ -39,22 +35,16 @@ function EditProfile() {
     try {
       console.log(formData);
       console.log(user.USERID);
-      console.log(business.BUSID);
-      const response = await authService.update(formData, user.USERID, business.BUSID); // Pass updated data and userID to the backend
+      const response = await authService.updateuser(formData, user.USERID); // Pass updated data and userID to the backend
       console.log('Update response:', response);
       if (response.success) {
-
-        //get the new user objects to update the context
         setUpdateMessage('Profile updated successfully!');
         const updateUser = await authService.getuser(user.USERID);
-        const updateBusiness = await authService.getbusiness(user.USERID);
 
-        //update the context objects to dynamically update the dashboard upon profile update
+        //update user context to show the updated data on the customer dash
         console.log(updateUser);
-        console.log(updateBusiness);
         setUser(updateUser);
-        setBusiness(updateBusiness);
-        
+
       } else {
         setErrors(response.errors || { general: 'Update failed' });
       }
@@ -80,7 +70,7 @@ function EditProfile() {
     </div>
   );
 
-  //Input fields for profile update data
+  //input fields 
   return (
     <div className="register-container">
       <h1>Edit Profile</h1>
@@ -90,12 +80,9 @@ function EditProfile() {
         {renderInputField("Email", "email", "email")}
         {renderInputField("Full Name", "fullName")}
         {renderInputField("Phone Number", "phoneNumber", "tel")}
-        {renderInputField("Business Name", "businessName")}
-        {renderInputField("Address", "address")}
-        {renderInputField("Profile Description", "profileDescription")}
         <button type="submit">Update Profile</button>
 
-        <button type="button" onClick={() => navigate('/ProviderDash')} className="back-button">
+        <button type="button" onClick={() => navigate('/CustomerDash')} className="back-button">
           Back to Dashboard
         </button>
 

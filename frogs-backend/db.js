@@ -1,14 +1,11 @@
 const oracledb = require('oracledb');
 require('dotenv').config(); 
 
+
+//Takes the login credentials from the env file to establish connection
 async function connectToDatabase() {
     try {
-        console.log('Attempting to connect to Oracle DB...');
-        console.log('Credentials:', {
-            user: process.env.ORACLE_USER,
-            connectString: process.env.ORACLE_CONNECTSTRING,
-        });
-
+     
         const connection = await oracledb.getConnection({
             user: process.env.ORACLE_USER,
             password: process.env.ORACLE_PASSWORD,

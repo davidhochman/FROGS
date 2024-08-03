@@ -14,18 +14,18 @@ const styles = {
 };
 
 function Reviews() {
-  const { business } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  //Get all the reviews for the current business that is logged in 
+  //Fetches the reviews that the user has made 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        if (business) {
-          const reviewsData = await authService.getreviews(business.BUSID);
+        if (user) {
+          const reviewsData = await authService.getuserreviews(user.USERID);
           setReviews(reviewsData);
           console.log(reviewsData);
         }
@@ -38,28 +38,12 @@ function Reviews() {
     };
 
     fetchReviews();
-  }, [business]); // Fetch reviews whenever the business changes
+  }, [user]); // Fetch reviews whenever the business changes
 
-  //Function call that allows the business to update their reply in the review page
-  const handleReplySubmit = async (reviewId, newReply) => {
-    try {
-      console.log(reviewId);
-      console.log(newReply);
-      if (newReply) {
-        await authService.updatereview(reviewId, newReply); // send updated reply to backend
-
-      }
-      // Update the review in the local state 
-      window.location.reload();
-    } catch (err) {
-      console.error("Error updating review reply:", err);
-      // Handle the error
-    }
-  };
-
+  //Reviews table 
   return (
     <div>
-      <h2>Reviews for {business?.BUSNAME || "Business"}</h2>
+      <h2>Your Reviews</h2>
 
       {loading ? (
         <p>Loading reviews...</p>
@@ -68,37 +52,25 @@ function Reviews() {
       ) : (
         <table style={styles.table}>
           <tr>
-            {/* Table Headers */}
+            {/* Table headers */}
             <th style={styles.ratingColumn}>Rating</th>
             <th style={styles.commentColumn}>Comment</th>
             <th style={styles.currReply}>Current Response</th>
-            <th style={styles.replyColumn}>Update Reply</th>
-
-            {/* Table Data */}
+            {/* Table data */}
           </tr> {reviews.map((review, key) => (
             <tr key={key}>
-              <td style={styles.ratingColumn}>{review.RATING}</td>
+              <td style={styles.ratingColumn}>{review.RATING}</td> 
               <td style={styles.commentColumn}>{review.REVIEW}</td>
               <td style={styles.currReply}>{review.RESPONSE}</td>
-              <td style={styles.replyColumn}>
-                <textarea
-                  defaultValue={review.REPLY} // Display the current reply in the textarea
-                  onChange={(e) => { review.REPLY = e.target.value; }} // Update review.REPLY directly
-                  style={{ width: '90%', height: '70px', resize: 'none' }}
-                />
-                <button onClick={() => handleReplySubmit(review.REVIEWID, review.REPLY)}>Submit Update</button>
-
-              </td>
-
             </tr>
           ))}
         </table>
       )}
-      <button type="button" onClick={() => navigate('/ProviderDash')} className="back-button">
-        Back to Dashboard
-      </button>
+      <button type="button" onClick={() => navigate('/CustomerDash')} className="back-button">
+          Back to Dashboard
+        </button>
     </div>
-
+    
   );
 }
 
