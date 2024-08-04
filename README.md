@@ -1,6 +1,10 @@
 # FROGS
 Freelancer Reservation Organization Guide and Scheduler, henceforth referred to as FROGS, is an intuitive booking system for a service marketplace that connects customers with local providers like repair technicians, makeup artists, and all other sorts of services.
 
+# Gaining Access
+1. You must manually add the .env file to the FROGS/frogs-backend directory.
+2. You can find a OneDrive link to the provided env file on the cover page of the FROGS Final Report.
+3. This project requires you connect with the UF Cisco VPN.
 
 # Project Setup
 1. Npm install
