@@ -11,7 +11,7 @@ Freelancer Reservation Organization Guide and Scheduler, henceforth referred to 
 1. Connect to the UF Cisco VPN
 2. Clone the code from the main repository, add the .env file to the backend
 3. Run npm install in FROGS/frogs-backend directory
-4. Run npm start in FROGS/frogs-backend directory
+4. Run npm start in FROGS/frogs-backend directory, you may get an error caused by bcrypt... in this case do "npm uninstall bcrypt" and then "npm install bcrypt" and the error will be resolved and you can run "npm start" again. 
 5. Run npm install in FROGS/frogs-frontend directory
 6. Run npm start in FROGS/frogs-frontend directory (type y and eneter to open in new port)
 7. You should now be at the main login/register page, if you encounter any errors check the more specific setup info in the FROGS Final Report.
